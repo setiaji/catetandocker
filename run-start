@@ -3,3 +3,4 @@ docker start container_name -- start container yang pernah running sebelumnya
 docker stop container_name -- stop container
 docker rm container_id -- delete container
 docker ps -a -- list all container (yang sedang dan sudah pernah running)
+docker ps -- list all running container
