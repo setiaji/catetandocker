@@ -1,3 +1,4 @@
-run docker -- running pertama kali dari images
-start docker -- start container yang pernah running sebelumnya
-stop docker -- stop container
+docker run id_image -- running pertama kali dari images
+docker start container_name -- start container yang pernah running sebelumnya
+docker stop container_name -- stop container
+docker rm container_id -- delete container
