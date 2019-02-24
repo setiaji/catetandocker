@@ -1,3 +1,3 @@
-run docker
-start docker
-stop docker
+run docker -- running pertama kali dari images
+start docker -- start container yang pernah running sebelumnya
+stop docker -- stop container
