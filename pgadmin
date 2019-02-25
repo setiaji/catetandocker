@@ -2,3 +2,4 @@ docker run -p 80:80 \
         -e "PGADMIN_DEFAULT_EMAIL=admin" \
         -e "PGADMIN_DEFAULT_PASSWORD=1" \
         -d dpage/pgadmin4
+        --link db:db
