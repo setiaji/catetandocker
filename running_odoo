@@ -19,6 +19,22 @@ docker run -p 8069:8069 --name odoo12ee --link db12ee:db -t odoo
 --- Odoo 12 EE with custom modules ---
 docker run -d -e POSTGRES_USER=odoo -e POSTGRES_PASSWORD=odoo -e POSTGRES_DB=postgres --name db12ee postgres:10
 docker run -v /Users/setiaji/Docker:/mnt/extra-addons -p 8069:8069 --name odoo12ee --link db12ee:db -t odoo
+
+--- check local dir is mounted
+docker exec -u root -it odoo12ee /bin/bash
+
+--- after login
+cd /mnt/extra-addons
+ls
+
+-- we should see files on local folder(host)
+-- restart odoo server
+docker stop db12ee
+docker stop odoo12ee
+sudo service docker stop
+sudo service docker start
+docker start db12ee
+docker start odoo12ee
 --- Odoo 12 EE with custom modules ---
 
 
