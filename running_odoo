@@ -28,7 +28,7 @@ cd /mnt/extra-addons
 ls
 
 -- we should see files on local folder(host)
--- restart odoo server
+-- restart odoo, postgres & docker server
 docker stop db12ee
 docker stop odoo12ee
 sudo service docker stop
