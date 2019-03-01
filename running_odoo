@@ -1,6 +1,12 @@
 --- Odoo 10 CE ---
 docker run -d -e POSTGRES_USER=odoo -e POSTGRES_PASSWORD=odoo -e POSTGRES_DB=postgres --name db10ce postgres:10
 docker run -p 8069:8069 --name odoo10ce --link db10ce:db -t odoo:10
+
+- isewan -
+docker run -d -e POSTGRES_USER=odoo -e POSTGRES_PASSWORD=odoo -e POSTGRES_DB=postgres --name dbisewan postgres:10
+docker run -p 8069:8069 --name odooisewan --link dbisewan:db -t odoo:10
+- isewan -
+
 --- Odoo 10 CE ---
 
 
