@@ -22,9 +22,14 @@ docker run -p 8069:8069 --name odoo12ee --link db12ee:db -t odoo
 --- Odoo 12 EE ---
 
 
---- Odoo 12 EE with custom modules ---
+--- Odoo 12 EE with custom modules & configuration ---
 docker run -d -e POSTGRES_USER=odoo -e POSTGRES_PASSWORD=odoo -e POSTGRES_DB=postgres --name db12ee postgres:10
-docker run -v /Users/setiaji/Docker:/mnt/extra-addons -v /Users/setiaji/Documents/Invosa/ISEWAN/conf:/etc/odoo -p 8069:8069 --name odoo12ee --link db12ee:db -t odoo
+docker run \
+-v /Users/setiaji/Documents/Invosa/ISEWAN/conf:/etc/odoo \
+-v /Users/setiaji/Docker:/mnt/extra-addons \
+-v /Users/setiaji/Documents/Invosa/ISEWAN/isewan_apps:/mnt/ins-addons \
+-p 8069:8069 --name odoo12ee --link db12ee:db -t odoo
+--- Odoo 12 EE with custom modules & configuration ---
 
 --- check local dir is mounted
 docker exec -u root -it odoo12ee /bin/bash
