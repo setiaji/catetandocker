@@ -4,7 +4,11 @@ docker run -p 8069:8069 --name odoo10ce --link db10ce:db -t odoo:10
 
 - isewan -
 docker run -d -e POSTGRES_USER=odoo -e POSTGRES_PASSWORD=odoo -e POSTGRES_DB=postgres --name dbisewan postgres:10
-docker run -v /Users/setiaji/Documents/Invosa/ISEWAN/odoo_apps:/mnt/extra-addons -v /Users/setiaji/Documents/Invosa/ISEWAN/isewan_apps:/mnt/extra-addons -p 8069:8069 --name odooisewan --link dbisewan:db -t odoo:10
+docker run \
+-v /Users/setiaji/Documents/Invosa/ISEWAN/conf:/etc/odoo \
+-v /Users/setiaji/Documents/Invosa/ISEWAN/odoo_apps:/mnt/extra-addons \
+-v /Users/setiaji/Documents/Invosa/ISEWAN/isewan_apps:/mnt/ins-addons \
+-p 8069:8069 --name odooisewan01 --link dbisewan:db -t odoo:10
 - isewan -
 
 --- Odoo 10 CE ---
@@ -25,9 +29,7 @@ docker run -p 8069:8069 --name odoo12ee --link db12ee:db -t odoo
 --- Odoo 12 EE with custom modules & configuration ---
 docker run -d -e POSTGRES_USER=odoo -e POSTGRES_PASSWORD=odoo -e POSTGRES_DB=postgres --name db12ee postgres:10
 docker run \
--v /Users/setiaji/Documents/Invosa/ISEWAN/conf:/etc/odoo \
--v /Users/setiaji/Docker:/mnt/extra-addons \
--v /Users/setiaji/Documents/Invosa/ISEWAN/isewan_apps:/mnt/ins-addons \
+
 -p 8069:8069 --name odoo12ee --link db12ee:db -t odoo
 --- Odoo 12 EE with custom modules & configuration ---
 
