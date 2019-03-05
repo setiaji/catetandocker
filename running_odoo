@@ -22,7 +22,6 @@ odoo.addons.bus.models.bus: Bus.loop listen imbus on db postgres
 docker run \
 -v /Users/setiaji/Documents/Invosa/Management/conf:/etc/odoo \
 -v /Users/setiaji/Documents/Invosa/Management/addons_invosa_enterprise/odoo12ent/enterprise:/mnt/extra-addons \
--v /Users/setiaji/Documents/Invosa/Management/ins-addons:/mnt/ins-addons \
 -p 8069:8069 --name odoopmt --link dbpmt:db -t odooins:12
 --- pmt ---
 
