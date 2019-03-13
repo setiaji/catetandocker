@@ -25,13 +25,14 @@ docker run \
 -p 8069:8069 --name odoopmt --link dbpmt:db -t odooins:12
 --- pmt ---
 
-
+--- glopac ---
 docker run -d -e POSTGRES_USER=odoo -e POSTGRES_PASSWORD=odoo -e POSTGRES_DB=postgres --name dbglopac postgres:10
 docker run \
--v /Users/setiaji/Documents/Invosa/ISEWAN/conf:/etc/odoo \
--v /Users/setiaji/Documents/Invosa/ISEWAN/enterprise:/mnt/extra-addons \
--v /Users/setiaji/Documents/Invosa/ISEWAN/ins-addons:/mnt/ins-addons \
+-v /Users/setiaji/Documents/Invosa/glopac/conf:/etc/odoo \
+-v /Users/setiaji/Documents/Invosa/glopac/enterprise:/mnt/extra-addons \
+-v /Users/setiaji/Documents/Invosa/glopac/ins-addons:/mnt/ins-addons \
 -p 8069:8069 --name odooglopac01 --link dbglopac:db -t odoo:10
+--- glopac ---
 
 --- Odoo 12 CE ---
 docker run -d -e POSTGRES_USER=odoo -e POSTGRES_PASSWORD=odoo -e POSTGRES_DB=postgres --name db12ce postgres:10
