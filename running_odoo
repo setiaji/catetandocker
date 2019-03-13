@@ -34,6 +34,15 @@ docker run \
 -p 8069:8069 --name odooglopac01 --link dbglopac:db -t odoo:10
 --- glopac ---
 
+--- vmx ---
+docker run -d -e POSTGRES_USER=odoo -e POSTGRES_PASSWORD=odoo -e POSTGRES_DB=postgres --name dbvmx postgres:10
+docker run \
+-v /Users/setiaji/Documents/Invosa/vmx/conf:/etc/odoo \
+-v /Users/setiaji/Documents/Invosa/vmx/enterprise:/mnt/extra-addons \
+-v /Users/setiaji/Documents/Invosa/vmx/ins-addons:/mnt/ins-addons \
+-p 8069:8069 --name odoovmx01 --link dbvmx:db -t odoo:8
+--- vmx ---
+
 --- Odoo 12 CE ---
 docker run -d -e POSTGRES_USER=odoo -e POSTGRES_PASSWORD=odoo -e POSTGRES_DB=postgres --name db12ce postgres:10
 docker run -p 8069:8069 --name odoo12ce --link db12ce:db -t odoo
