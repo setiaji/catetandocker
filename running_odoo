@@ -38,7 +38,7 @@ docker run \
 docker run -d -e POSTGRES_USER=odoo -e POSTGRES_PASSWORD=odoo -e POSTGRES_DB=postgres --name dbipone postgres:10
 docker run \
 -v /Users/setiaji/Documents/Invosa/vmx/conf:/etc/odoo \
--v /Users/setiaji/Documents/Invosa/vmx/ins-addons:/mnt/extra-addons \
+-v /Users/setiaji/Documents/Invosa/vmx/ins-addons:/mnt/ins-addons \
 -p 8069:8069 --name odooipone01 --link dbipone:db -t odoo:8
 --- vmx/ipone ---
 
