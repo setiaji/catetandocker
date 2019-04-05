@@ -2,8 +2,8 @@ docker run -d --name dbredmine \
 -e POSTGRES_PASSWORD=bAndit750 \
 -e POSTGRES_USER=redmine postgres
 
-docker run -d --name myredmine \
--e REDMINE_DB_POSTGRES=insredmine \
+docker run --name myredmine \
+-e REDMINE_DB_POSTGRES=dbredmine \
 -e REDMINE_DB_USERNAME=redmine \
 -e REDMINE_DB_PASSWORD=bAndit750 \
 -p 3000:3000 \
