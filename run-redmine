@@ -6,5 +6,5 @@ docker run -d --name myredmine \
 -e REDMINE_DB_POSTGRES=insredmine \
 -e REDMINE_DB_USERNAME=redmine \
 -e REDMINE_DB_PASSWORD=bAndit750 \
--p 3000:3000
+-p 3000:3000 \
 redmine
