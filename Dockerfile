@@ -81,6 +81,10 @@ RUN mkdir  -p /mnt/ins-addons \
         && chown -R odoo /mnt/ins-addons 
 VOLUME ["/var/lib/odoo", "/mnt/extra-addons", "/mnt/ins-addons" ]
 
+# Copy enterprise addons to extra-addons
+COPY . /mnt/extra-addons
+RUN chown -R odoo /mnt/extra-addons
+
 # Expose Odoo services
 EXPOSE 8069 8071
 
